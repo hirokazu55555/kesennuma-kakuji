@@ -1,0 +1,53 @@
+<html>
+	<head>
+		{% block head %}
+		<link href="/static/css/bootstrap.css" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>
+            function setInner(command){
+                $("#console")[0].innerHTML += $("<div/>").text(command).html();
+            }
+            $(function(){
+                $.getJSON("{{fullFileName}}", function(data){
+                    var len = data.length;
+                    var sleep = 0;
+                    for(var i = 0; i < len; i ++){
+                        (function(){
+                            var num = i;
+                            var command = data[num].c;
+                            if(command != '\u001b[4l' &
+                               command != '\u001b[4h' &
+                               command != '\u001b[1D' &
+                               command != '\u001b[1P'){
+                                sleep += data[num].s;
+                                setTimeout(
+                                    function(){setInner(command)}
+                                    , sleep
+                                );
+                            }
+                        })();
+                    }
+                });
+            });
+        </script>
+        {% endblock %}
+	</head>
+	<body style="background-color:black;color:white">
+		{% block content %}
+		<ol class="breadcrumb">
+			<li><a href="/">TOP</a></li>
+			<li><a href="/app/">{{year}}年</a></li>
+			<li><a href="/app/{{year}}">{{month}}月</a></li>
+			<li><a href="/app/{{year}}/{{month}}">{{day}}日</a></li>
+			<li><a href="/app/{{year}}/{{month}}/{{day}}">{{fileName}}</a></li>
+		</ol>
+		<div class="container">
+			<pre id="console" style="background-color:black; color:white"></pre>
+		</div>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="/static/js/bootstrap.min.js"></script>
+		{% endblock %}
+	</body>
+</html>
+
+

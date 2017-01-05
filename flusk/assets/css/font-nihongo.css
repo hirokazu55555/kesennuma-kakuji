@@ -1,0 +1,15 @@
+@font-face {
+	font-family: 'fontNihongo';
+	src: url('../fonts/FontopoNIHONGO.woff2') format('woff2'),
+	     url('../fonts/FontopoNIHONGO.woff') format('woff'),
+	     url('../fonts/FontopoNIHONGO.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+.webFontNihongo {
+	font-family: 'fontNihongo';
+}
+
+.kokoro {
+    font-family: 'Kokoro';
+}
