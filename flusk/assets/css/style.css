@@ -205,6 +205,17 @@ h1, h2, h3, h4, h5, h6{
 #header .bottom a:hover {
     opacity: 1;
 }
+#header .full-bottom{
+    bottom: 1%;
+	display: block;
+	position: absolute;
+    width: 100%;
+	font-size: 1.0em;
+	color: rgba(255,255,255,.5);
+	line-height: 1em;
+	font-family: 'fontNihongo';
+	text-align: center;
+}
 
 
 /*////////////////////////////////////////////////////////////////////////
