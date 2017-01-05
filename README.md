@@ -1,1 +1,2 @@
-"# kesennuma-kakuji" 
+# 気仙沼の阿部商店向けにWebサイト作成を行う。
+## プロジェクト名はKAKUJI
