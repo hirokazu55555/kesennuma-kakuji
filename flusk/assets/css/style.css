@@ -212,6 +212,7 @@ h1, h2, h3, h4, h5, h6{
 ///////////////////////////////////////////////////////////////////////*/
 
 #drawer-right {
+    font-family: 'fontNihongo';
     position: fixed;
     right: 0;
     top: 0;
